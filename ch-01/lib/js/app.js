@@ -21,6 +21,7 @@
 		this.info_div.id = "info_div";
 		this.deck_div = document.createElement('div');
 		this.deck_div.div = "deck_div";
+		this.gameDeck = new Deck(this.deck_div, option);
 
 		this.el.appendChild(this.info_div);
 		this.el.appendChild(this.deck_div);
@@ -28,7 +29,9 @@
 	}
 
 	// Deck
-	var Deck = function() {
+	var Deck = function(deck_div, option) {
+
+		var card = new Card();
 
 	}
 
@@ -50,7 +53,7 @@
 
 	// Discard Pile
 	var DiscardPile = function() {
-		
+
 	}
 
 	// 	Holders
@@ -58,8 +61,6 @@
 	// 	Accept or Reject
 
 	
-
-
 
 	window.Game = Game; // Attach Game to Window, so it's available outside of this IFFE
 
