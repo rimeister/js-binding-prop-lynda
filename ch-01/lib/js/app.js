@@ -12,7 +12,7 @@
 	// 	Discard Pile
 	// 	Rules
 
-	// GAME OBJECT CONSTRUCTOR
+	// Game Object Constructor
 	var Game = function(el, option) {
 
 		this.el = document.getElementById(el);
@@ -21,6 +21,7 @@
 		this.info_div.id = "info_div";
 		this.deck_div = document.createElement('div');
 		this.deck_div.div = "deck_div";
+		// Create new gameDeck
 		this.gameDeck = new Deck(this.deck_div, option);
 
 		this.el.appendChild(this.info_div);
@@ -28,13 +29,18 @@
 
 	}
 
-	// Deck
+	// Deck constructor
 	var Deck = function(deck_div, option) {
 
-		var card = new Card();
+		this.deckData = option.data;
+		this.buildDeck = function(){
+			// Document fragments allow us to build out divs off DOM, then append them to the body once they're collected
+			var parentFrag = document.createDocumentFragment();
+			// Left off here, 5:06 in video
+			var card = new Card();			
+		}
 
 	}
-
 
 	// 	Cards
 	// 	----
