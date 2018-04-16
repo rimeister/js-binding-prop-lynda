@@ -15,7 +15,14 @@
 		<a href="#" class="btn">Muffin 2</a>
 	</div>
 
+	<script type="text/javascript" src="lib/json/flashcard_QA.json"></script>
 	<script type="text/javascript" src="lib/js/app.js"></script>
+	<script type="text/javascript">
+		(function(){
+			var myGame = new Game("game_div", {game: "flashcard", data: flashcard_QA});
+			console.log(myGame);
+		})();
+	</script>
 
 </body>
 </html>
