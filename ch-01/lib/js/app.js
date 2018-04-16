@@ -4,41 +4,62 @@
 
 ;(function(window){
 
-	/*
-
-		*Pseudocode*
-		
-		Game
-			Info section
-			Deck
-			Discard Pile
-			Rules
-
-		Deck
-			Cards
-			----
-			Shuffle
-			Stack
-
-		Cards
-
-			val
-			suit
-			----
-			flip
-
-		Discard Pile
-			Holders
-			---
-			Accept or Reject
-
-	*/
+	/*Pseudocode*/
+	
+	// Game
+	// 	Info section
+	// 	Deck
+	// 	Discard Pile
+	// 	Rules
 
 	// GAME OBJECT CONSTRUCTOR
-	var Game = function(el, option){
+	var Game = function(el, option) {
+
 		this.el = document.getElementById(el);
 		this.option = option;
+		this.info_div = document.createElement('div');
+		this.info_div.id = "info_div";
+		this.deck_div = document.createElement('div');
+		this.deck_div.div = "deck_div";
+
+		this.el.appendChild(this.info_div);
+		this.el.appendChild(this.deck_div);
+
 	}
+
+	// Deck
+	var Deck = function() {
+
+	}
+
+
+	// 	Cards
+	// 	----
+	// 	Shuffle
+	// 	Stack
+
+	// Card
+	var Card = function() {
+
+	}
+
+	// 	val
+	// 	suit
+	// 	----
+	// 	flip
+
+	// Discard Pile
+	var DiscardPile = function() {
+		
+	}
+
+	// 	Holders
+	// 	---
+	// 	Accept or Reject
+
+	
+
+
 
 	window.Game = Game; // Attach Game to Window, so it's available outside of this IFFE
 
