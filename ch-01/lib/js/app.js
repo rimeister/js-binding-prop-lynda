@@ -2,6 +2,36 @@
 /****** App.js ********/
 /**********************/
 
+/*
+
+	*Pseudocode*
+	
+	Game
+		Info section
+		Deck
+		Discard Pile
+		Rules
+
+	Deck
+		Cards
+		----
+		Shuffle
+		Stack
+
+	Cards
+
+		val
+		suit
+		----
+		flip
+
+	Discard Pile
+		Holders
+		---
+		Accept or Reject
+
+*/
+
 window.onload = function() {
 
 	// MUFFIN OBJECT CONSTRUCTOR
