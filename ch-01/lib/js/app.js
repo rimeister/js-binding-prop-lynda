@@ -21,7 +21,6 @@ in index.html */
 
 	// Game Object Constructor
 	var Game = function(el, option) {
-
 		this.el = document.getElementById(el);
 		this.option = option;
 		// Create div elements dynamtically for the info div and deck div
@@ -32,6 +31,7 @@ in index.html */
 		this.deck_div.id = "deck_div";
 		// Create new gameDeck
 		this.gameDeck = new Deck(this.deck_div, option);
+		this.gameDeck.buildDeck();
 
 		this.el.appendChild(this.info_div);
 		this.el.appendChild(this.deck_div);
@@ -54,6 +54,11 @@ in index.html */
 			// Loop over each 'card' node in the JSON data and create a new card with it's values
 			// Set i to the length of the data object, minus 1. Decrement each time, stop when it's equal to 0.
 			// So var i in this loop starts at the biggest value, and decreases to 0, instead of starting at 0 and increasing to the max value
+			// What is the benefit of doing it this way, instead of starting at 0 and incrementing to < this.deckData.length?
+			// Seems like it might just put the newest card at the top, or something.
+			// I might try switching it to a normal for loop later
+			// Also, I might try putting my object methods on the prototype instead of in the constructor function
+			// (which is what she did)
 			for (var i = this.deckData.length - 1; i >= 0; i--) {
 				var card = new Card();
 				card.id = "card-" + i; // Give the card an ID
