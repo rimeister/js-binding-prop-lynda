@@ -21,20 +21,18 @@ in index.html */
 
 	// Game Object Constructor
 	var Game = function(el, option) {
-		this.el = document.getElementById(el);
-		this.option = option;
-		// Create div elements dynamtically for the info div and deck div
-		this.info_div = document.createElement('div');
-		// Give the dynmaically created div an ID
-		this.info_div.id = "info_div";
+
+		this.el = document.getElementById(el); // The el for this game is equal to the one that was passed in in the args for Game. In this case, the div in the HTML with the ID "game_div"
+		this.option = option; // The option object for this game is equal to the one that was passed in in the args for Game
+		this.info_div = document.createElement('div'); // Create div elements dynamtically for the info div and deck div
+		this.info_div.id = "info_div"; // Give the dynmaically created div an ID
 		this.deck_div = document.createElement('div');
 		this.deck_div.id = "deck_div";
-		// Create new gameDeck
-		this.gameDeck = new Deck(this.deck_div, option);
-		this.gameDeck.buildDeck();
+		this.gameDeck = new Deck(this.deck_div, option); // Create new Deck for this game, assign it to property "gameDeck"
+		this.gameDeck.buildDeck(); // Run the buildDeck method on the "gameDeck" Deck just created 
 
-		this.el.appendChild(this.info_div);
-		this.el.appendChild(this.deck_div);
+		this.el.appendChild(this.info_div); // Add the info_div that was just created (dynamically) inside the "game_div" element
+		this.el.appendChild(this.deck_div); // Add the deck_div that was just created (dynamically) inside the "game_div" element
 
 	}
 
