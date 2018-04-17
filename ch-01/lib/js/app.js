@@ -41,6 +41,8 @@ in index.html */
 	// Deck constructor
 	var Deck = function(deck_div, option) {
 
+		// From the the 'option' object, passed in when a Game is instantiated in index.html, get the property 'data'
+		// the 'data' property has the value of the var flashcard_QA, which is a JSON object containing all the game card values
 		this.deckData = option.data;
 		this.buildDeck = function(){
 			// Document fragments allow us to build out divs off DOM, then append them to the body once they're collected
