@@ -2,7 +2,14 @@
 /****** App.js ********/
 /**********************/
 
+/* The purpose of this IIFE is to keep the variables contained within the scope of the function,
+preventing them from having global scope
+The Game function/object type is then attached to the window object, so it can be called from outside the function,
+in index.html */
+
 ;(function(window){
+// Note: video said to include the preceding semicolon, 
+// in case IIFE accidently butts up against a statement that doesn't end with one (if minified, I suppose).
 
 	/*Pseudocode*/
 	
