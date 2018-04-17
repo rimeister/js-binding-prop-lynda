@@ -44,11 +44,25 @@ in index.html */
 		// From the the 'option' object, passed in when a Game is instantiated in index.html, get the property 'data'
 		// the 'data' property has the value of the var flashcard_QA, which is a JSON object containing all the game card values
 		this.deckData = option.data;
+
 		this.buildDeck = function(){
 			// Document fragments allow us to build out divs off DOM, then append them to the body once they're collected
 			var parentFrag = document.createDocumentFragment();
-			// Left off here, 5:06 in video
-			var card = new Card();			
+			// clear the deck_div if it contains any data
+			deck_div.innerHTML = "";
+
+			// Loop over each 'card' node in the JSON data and create a new card with it's values
+			// Set i to the length of the data object, minus 1. Decrement each time, stop when it's equal to 0.
+			// So var i in this loop starts at the biggest value, and decreases to 0, instead of starting at 0 and increasing to the max value
+			for (var i = this.deckData.length - 1; i >= 0; i--) {
+				var card = new Card();
+				card.id = "card-" + i; // Give the card an ID
+				card.data = this.deckData[i]; // Give this card its data from the deckData
+				card.buildCard(parentFrag);	// Run buildCard method
+			}
+
+			deck_div.appendChild(parentFrag);
+
 		}
 
 	}
