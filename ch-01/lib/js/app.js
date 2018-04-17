@@ -44,6 +44,7 @@ in index.html */
 		this.deckData = option.data;
 
 		this.buildDeck = function(){
+			
 			// Document fragments allow us to build out divs off DOM, then append them to the body once they're collected
 			var parentFrag = document.createDocumentFragment();
 			// clear the deck_div if it contains any data
@@ -78,6 +79,46 @@ in index.html */
 	// Card
 	var Card = function() {
 
+		this.id = ""; // Set to an empty string, gets overwritten when we build the card in the Deck constructor
+		this.data = ""; // Set to an empty string, gets overwritten when we build the card in the Deck constructor
+		this.cardCont = document.createElement("div"); // Create a card container div.
+		this.cardCont.className = "card_container"; // Give the card container a classname of card_container
+		this.cardFront = document.createElement("div"); // Create a div for card front.
+		this.cardFront.className = "card_front"; // Assign a class name of card_front to the card front div
+		this.cardBack = document.createElement("div"); // Create a div for card Back.
+		this.cardBack.className = "card_back"; // Assign a class name of card_back to the card Back div
+		
+		this.buildCard = function(parentFrag) {
+
+			var flipDiv = document.createElement("div"), // create div elements, put them in vars
+				frontValDiv = document.createElement("div"),
+				backValDiv = document.createElement("div"),
+				catDiv = document.createElement("div")
+			;
+
+			frontValDiv.className = "front_val"; // Add class name to the 
+			flipDiv.className = "flip";
+			backValDiv.className = "back_val";
+			catDiv.className = "cat_val";
+
+			frontValDiv.innerHTML = this.data.q; /* From the JSON data, which has been set to "data"
+			when the card is created, get the "q" value and put that value into the HTML element frontValDiv */
+			backValDiv.innerHTML = this.data.a; // Same as above, but it puts the answer into backValDiv
+			catDiv.innerHTML = this.data.category; // Puts the category into the category div
+
+			this.cardFront.appendChild(frontValDiv); // Add the front val div to 
+			this.cardFront.appendChild(catDiv);
+			this.cardBack.appendChild(backValDiv);
+
+			flipDiv.appendChild(this.cardFront);
+			flipDiv.appendChild(this.cardBack);
+
+			this.cardCont.id = this.id; // Just takes the ID from the card, puts it on the card container
+			this.cardCont.appendChild(flipDiv); // Add the flipDiv to the card container div
+			parentFrag.appendChild(this.cardCont); // Add the card container to the parent fragment
+
+		}
+
 		this.shuffle = function() {
 
 		}
@@ -95,14 +136,14 @@ in index.html */
 
 	// Discard Pile
 	var DiscardPile = function() {
-
+/*
 		this.val = ; // value of card in the discard pile
 		this.suit = ; // Suit of the card in the discard pile
 
 		this.flip = function(this.card) {
 			// Flip the card in the discard pile
 		}
-
+*/
 	}
 
 	// 	Holders
