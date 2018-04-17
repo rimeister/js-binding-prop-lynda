@@ -116,11 +116,9 @@ in index.html */
 			this.cardCont.id = this.id; // Just takes the ID from the card, puts it on the card container
 			this.cardCont.appendChild(flipDiv); // Add the flipDiv to the card container div
 			this.cardCont.onclick = function(e) {
-				console.log(e.target, e.currentTarget);
-				console.log(e.currentTarget.className, e.currentTarget.classList);
-				console.log(this);
+				e.currentTarget.classList.toggle("flip");
 			}
-			
+
 			parentFrag.appendChild(this.cardCont); // Add the card container to the parent fragment
 
 		}

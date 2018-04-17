@@ -134,8 +134,8 @@ p {
 
 .card_container{
 	float: left;
-	margin-right: 40px;
-	margin-bottom: 40px;
+	margin-right: 15px;
+	margin-bottom: 15px;
 	width: 200px;
 	height: 300px;
 	cursor: pointer;
@@ -151,7 +151,7 @@ p {
 	border: thin solid #ccc;
 	border-radius: 10px;
 	padding: 20px;
-	width: 180px;
+	width: 200px;
 	height: 300px;
 	background-color: white;
 	text-align: center;
@@ -159,9 +159,10 @@ p {
 }
 
 .card_front {
-	z-index: 2;
+	box-sizing: border-box;
 	transform: rotateY(0deg);
 	background-position: -86px -69px;
+	z-index: 2;
 }
 
 .card_back {
