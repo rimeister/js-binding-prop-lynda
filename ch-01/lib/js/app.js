@@ -80,6 +80,14 @@ in index.html */
 	// Card
 	var Card = function() {
 
+		this.shuffle = function() {
+
+		}
+
+		this.stack = function() {
+
+		}
+
 	}
 
 	// 	val
@@ -89,6 +97,13 @@ in index.html */
 
 	// Discard Pile
 	var DiscardPile = function() {
+
+		this.val = ; // value of card in the discard pile
+		this.suit = ; // Suit of the card in the discard pile
+
+		this.flip = function(this.card) {
+			// Flip the card in the discard pile
+		}
 
 	}
 
