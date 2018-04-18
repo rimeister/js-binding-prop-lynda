@@ -1,6 +1,6 @@
 # js-binding-prop-lynda
 
-This repo contains the project I made for the Lynda course "Vanilla JavaScript: Binding and Propagation".
+This repo contains the project I made for the Lynda course **Vanilla JavaScript: Binding and Propagation**.
 
 Course URL: https://www.lynda.com/JavaScript-tutorials/Vanilla-JavaScript-Binding-Propagation/636139-2.html
 
@@ -17,7 +17,8 @@ This project is a flash card game.
 
 ## Learning outcomes of the project
 
-	* Creating dynamic HTML elements that are generated and added to the DOM with javascript
+	* Creating dynamic HTML elements that are generated and added 
+	to the DOM with javascript
 	* When to use event.preventDefault()
 	* Using constructor functions to create a reference type (i.e., working classes to define an object type)
 	* Working with prototypes
