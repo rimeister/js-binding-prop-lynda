@@ -258,3 +258,19 @@ img{
 	width: 40px;
 
 }
+
+
+/**********************/
+/***** Animations *****/
+/**********************/
+
+.flip_card .flip {
+	transform: rotateY(180deg);
+	transform-origin: center;
+}
+
+.flip {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
