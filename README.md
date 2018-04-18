@@ -20,7 +20,8 @@ This project is a flash card game.
 	* Creating dynamic HTML elements that are generated and added 
 	to the DOM with javascript
 	* When to use event.preventDefault()
-	* Using constructor functions to create a reference type (i.e., working classes to define an object type)
+	* Using constructor functions to create a reference type 
+	(i.e., working classes to define an object type)
 	* Working with prototypes
 	* Using prototypical inheritance to optimize your code
 	* Using bind, call, and apply
