@@ -32,41 +32,6 @@
 
 			var myGame = new Game("game_div", {game: "flashcard", data: flashcard_QA});
 
-
-			/**********************************************/
-			/****** Examples to demonstrate "this" ********/
-			/**********************************************/
-
-			// Example #1
-			function myFunction() {
-				console.log(this);
-			}
-
-			// Example #2
-			myFunction(); // Undefined with "use strict"
-
-			var Person = function() {
-				this.name = "John";
-				this.salary = 10;
-				console.log(this);
-			}
-
-			// Example #3
-			var Janice = new Person();
-			Janice.name = "Janice";
-
-
-			var VIP_emp = {
-				bonus: function(){
-					console.log(this);
-				},
-				title: myFunction.bind(Janice) // a) add the myFunction method (defined earlier) to this object. 
-				// by binding the Janice Person to myFunction(), "this" will always point to Janice
-			}
-
-			VIP_emp.bonus();
-			VIP_emp.title(); // b) Note how, when the "myFunction" function is called (through "title"), "this" becomes the VIP_emp object, whereas if you call myFunction" on its own, it "this" will be undefined (or, if you're not in strict mode, it will be he window object)
-
 		})();
 
 	</script>
