@@ -27,8 +27,45 @@
 	<script type="text/javascript" src="lib/js/app.js"></script>
 	<script type="text/javascript">
 		(function(){
+
+			"use strict"; // "use strict" will change what "this" refers to in example #1
+
 			var myGame = new Game("game_div", {game: "flashcard", data: flashcard_QA});
+
+
+			/**********************************************/
+			/****** Examples to demonstrate "this" ********/
+			/**********************************************/
+
+			// Example #1
+			function myFunction() {
+				console.log(this);
+			}
+
+			// Example #2
+			myFunction();
+
+			var Person = function() {
+				this.name = "John";
+				this.salary = 10;
+				console.log(this);
+			}
+
+			// Example #3
+			new Person();
+
+			var VIP_emp = {
+				bonus: function(){
+					console.log(this);
+				},
+				title: myFunction
+			}
+
+			VIP_emp.bonus();
+			VIP_emp.title();
+
 		})();
+
 	</script>
 
 </body>
