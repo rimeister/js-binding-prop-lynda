@@ -10,16 +10,18 @@
 		console.log(boss);
 		*/
 
-		var m = 7;
+		var cardsToShuffle = [1,2,3,4,5,6,7];
+		var m = cardsToShuffle.length;
 
 		while (m) {
 			i = Math.floor(Math.random() * m--); // This line gets a random number that's between 0 and the max index of the cardsToShuffle object. 
 			// She called this var (i) the iterator. I guess m decrements every time this loop runs
-			console.log("m is equal to "+m);
-			console.log("i is equal to "+i);
-			console.log("\n")
-			//t = cardsToShuffle[m];
-			//cardsToShuffle[m] = cardsToShuffle[i]; 
+		}
+
+		for (var x in cardsToShuffle) {
+
+			console.log(cardsToShuffle[x]); // This logs out the value of each item in cardsToShuffle
+
 		}
 
 	</script>
