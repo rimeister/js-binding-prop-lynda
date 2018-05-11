@@ -11,11 +11,15 @@
 		*/
 
 		var cardsToShuffle = [1,2,3,4,5,6,7];
-		var m = cardsToShuffle.length;
+		var m = cardsToShuffle.length, t, i;
 
 		while (m) {
-			i = Math.floor(Math.random() * m--); // This line gets a random number that's between 0 and the max index of the cardsToShuffle object. 
-			// She called this var (i) the iterator. I guess m decrements every time this loop runs
+
+			i = Math.floor(Math.random() * m--);
+			t = cardsToShuffle[m];
+			cardsToShuffle[m] = cardsToShuffle[i];
+			cardsToShuffle[i] = t;
+
 		}
 
 		for (var x in cardsToShuffle) {
@@ -23,6 +27,8 @@
 			console.log(cardsToShuffle[x]); // This logs out the value of each item in cardsToShuffle
 
 		}
+
+		/* CONFIRMED: The while loop is a shuffling algorithm, that shuffles the values of the original array. None of the values in the array repeat after shuffling, they're just rearranged. */
 
 	</script>
 </body>
