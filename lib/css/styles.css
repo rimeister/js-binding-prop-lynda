@@ -145,6 +145,7 @@ p {
 
 .card_front, .card_back {
 	backface-visibility: hidden;
+	box-sizing: border-box;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -160,7 +161,6 @@ p {
 }
 
 .card_front {
-	box-sizing: border-box;
 	transform: rotateY(0deg);
 	background-position: -86px -69px;
 	z-index: 2;
