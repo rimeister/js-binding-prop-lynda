@@ -61,7 +61,12 @@
 		<p>Here's more explanation from an article titled <a href="https://www.sitepoint.com/demystifying-javascript-closures-callbacks-iifes/">Demystifying JavaScript Closures, Callbacks and IIFEs</a>:
 		<br><br>
 		"In JavaScript, a closure is any function that <strong>keeps reference to variables from its parent's scope</strong> even after the parent has returned."
-		</p>	
+		</p>
+
+		<h3>Example 2</h3>
+		<button id="incrementTestVarBtn2">Click to increment the variable 'counter'.</button>
+		<br><br>
+		<p><strong>The variable counter is equal to <span id="varWrapper2">0</span></strong></p>
 	</div>
 	
 	<script type="text/javascript">
@@ -96,6 +101,8 @@
 		/****** Understanding Closures *****/
 		/***********************************/
 
+		// Example 1
+
 		var testVarBtn = document.getElementById('incrementTestVarBtn');
 		var varWrapper = document.getElementById('varWrapper');
 
@@ -111,6 +118,29 @@
 		})();
 
 		testVarBtn.onclick = incrementVar;
+
+
+		// Example 2, without an IIFE
+
+		var testVarBtn2 = document.getElementById('incrementTestVarBtn2');
+		var varWrapper2 = document.getElementById('varWrapper2');
+
+		testVarBtn2.onclick = getCounter;
+
+		function getCounter(){
+
+			var counter = 0;
+
+			function incrementCounter() {
+				counter++;
+				console.log(counter);
+			}
+
+			return incrementCounter();
+
+		}
+
+
 
 	</script>
 </body>
