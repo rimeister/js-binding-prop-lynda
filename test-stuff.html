@@ -25,6 +25,20 @@
 
 		}
 
+		/* Event Bubbling demo */
+		.card-outer {
+			background-color: green;
+			display: block;
+			padding: 60px;
+		}
+
+		.card-inner {
+			width: 60px;
+			height: 100px;
+			background-color: red;
+			display: block;
+		}
+
 	</style>
 
 </head>
@@ -63,10 +77,24 @@
 		"In JavaScript, a closure is any function that <strong>keeps reference to variables from its parent's scope</strong> even after the parent has returned."
 		</p>
 
-		<h3>Example 2</h3>
+		<h3>Event Proegation, i.e., "Bubbling"</h3>
 		<button id="incrementTestVarBtn2">Click to increment the variable 'counter'.</button>
 		<br><br>
 		<p><strong>The variable counter is equal to <span id="varWrapper2">0</span></strong></p>
+
+		<h3>Example 3</h3>
+		<div class="card-outer" id="bubble-demo">
+			<div class="card-inner">
+				Example with Bubbling
+			</div>
+		</div>
+		<div class="card-outer" id="no-bubble-demo">
+			<div class="card-inner">
+				Example without Bubbling
+			</div>
+		</div>
+		<p><strong>The variable counter is equal to <span id="varWrapper2">0</span></strong></p>
+
 	</div>
 	
 	<script type="text/javascript">
@@ -141,6 +169,21 @@
 		}
 
 
+		/********************************************/
+		/****** Understanding Event Propegation *****/
+		/********************************************/
+
+		// Listen to inner and outer elements to see if they've been clicked
+		var cardEles = document.querySelectorAll('.card-outer, .card-inner'); 
+		// Bitchin' Bonus Easter Egg: discovered .querySelectorAll()
+		
+		for (var i = 0; i < cardEles.length; i++) {
+			
+			querySelectorAll[i].onclick = function(){
+				console.log(this);
+			}
+
+		}
 
 	</script>
 </body>
