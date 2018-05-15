@@ -28,7 +28,7 @@
 		/* Event Bubbling demo */
 		.card-outer {
 			background-color: green;
-			display: block;
+			display: inline-block;
 			padding: 60px;
 		}
 
@@ -89,11 +89,10 @@
 			</div>
 		</div>
 		<div class="card-outer" id="no-bubble-demo">
-			<div class="card-inner">
+			<div class="card-inner" id="no-bubble-demo-inner">
 				Example without Bubbling
 			</div>
 		</div>
-		<p><strong>The variable counter is equal to <span id="varWrapper2">0</span></strong></p>
 
 	</div>
 	
@@ -178,12 +177,17 @@
 		// Bitchin' Bonus Easter Egg: discovered .querySelectorAll()
 		
 		for (var i = 0; i < cardEles.length; i++) {
-			
-			querySelectorAll[i].onclick = function(){
-				console.log(this);
+			cardEles[i].onclick = function(){
+				this.style.backgroundColor = "black";
 			}
 
 		}
+
+		// Stop event propegation on the no-bubble example
+		document.getElementById('no-bubble-demo-inner').addEventListener('click', function(event){
+			event.stopPropagation();
+		});
+
 
 	</script>
 </body>
